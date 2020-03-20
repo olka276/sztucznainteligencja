@@ -1,0 +1,14 @@
+C:\Users\Aleksandra\source\repos\grafgry\grafgry\obj\Debug\grafgry.csprojAssemblyReference.cache
+C:\Users\Aleksandra\source\repos\grafgry\grafgry\obj\Debug\MainWindow.g.cs
+C:\Users\Aleksandra\source\repos\grafgry\grafgry\obj\Debug\App.g.cs
+C:\Users\Aleksandra\source\repos\grafgry\grafgry\obj\Debug\grafgry_MarkupCompile.cache
+C:\Users\Aleksandra\source\repos\grafgry\grafgry\obj\Debug\grafgry_MarkupCompile.lref
+C:\Users\Aleksandra\source\repos\grafgry\grafgry\bin\Debug\grafgry.exe.config
+C:\Users\Aleksandra\source\repos\grafgry\grafgry\bin\Debug\grafgry.exe
+C:\Users\Aleksandra\source\repos\grafgry\grafgry\bin\Debug\grafgry.pdb
+C:\Users\Aleksandra\source\repos\grafgry\grafgry\obj\Debug\MainWindow.baml
+C:\Users\Aleksandra\source\repos\grafgry\grafgry\obj\Debug\grafgry.g.resources
+C:\Users\Aleksandra\source\repos\grafgry\grafgry\obj\Debug\grafgry.Properties.Resources.resources
+C:\Users\Aleksandra\source\repos\grafgry\grafgry\obj\Debug\grafgry.csproj.GenerateResource.cache
+C:\Users\Aleksandra\source\repos\grafgry\grafgry\obj\Debug\grafgry.exe
+C:\Users\Aleksandra\source\repos\grafgry\grafgry\obj\Debug\grafgry.pdb
