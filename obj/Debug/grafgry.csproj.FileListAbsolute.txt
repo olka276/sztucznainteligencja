@@ -12,3 +12,5 @@ C:\Users\Aleksandra\source\repos\grafgry\grafgry\obj\Debug\grafgry.Properties.Re
 C:\Users\Aleksandra\source\repos\grafgry\grafgry\obj\Debug\grafgry.csproj.GenerateResource.cache
 C:\Users\Aleksandra\source\repos\grafgry\grafgry\obj\Debug\grafgry.exe
 C:\Users\Aleksandra\source\repos\grafgry\grafgry\obj\Debug\grafgry.pdb
+D:\sztucznainteligencja\obj\Debug\grafgry.exe
+D:\sztucznainteligencja\obj\Debug\grafgry.pdb

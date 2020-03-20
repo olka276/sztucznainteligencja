@@ -10,11 +10,20 @@ namespace grafgry
     {
         public string Player;
         public int Value;
+        public int? Score;
 
         public Node(string player, int value)
         {
             Player = player;
             Value = value;
+            Score = null;
+        }
+
+        public Node(string player, int value, int score)
+        {
+            Player = player;
+            Value = value;
+            Score = score;
         }
 
 

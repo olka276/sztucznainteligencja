@@ -42,5 +42,25 @@ namespace grafgry
             Code.Text = code;
             
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            string code;
+            List<Node> nodes = new List<Node>();
+            List<Edge> edges = new List<Edge>();
+            List<int> tokens = new List<int>(new int[] { 4, 5, 6 });
+
+            string startingPlayer = "A";
+
+            Graph grafik = new Graph(nodes, edges, tokens, startingPlayer);
+
+            grafik.GenerateGraph(startingPlayer);
+
+
+
+            code = grafik.ToString();
+
+            Code.Text = code;
+        }
     }
 }

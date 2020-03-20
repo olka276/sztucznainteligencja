@@ -8,20 +8,24 @@ namespace grafgry
 {
     class Edge
     {
-        private Node SourceNode;
-        private Node TargetNode;
-        private int Value;
+        public Node SourceNode;
+        public Node TargetNode;
+        public int Value;
+        public String Color;
 
         public Edge(Node source, Node target, int value)
         {
             SourceNode = source;
             TargetNode = target;
             Value = value;
+            Color = "black";
         }
+
+        //overrides a method ToString, which gives a graphViz lines
 
         public override string ToString()
         {
-            return $"\t\"{SourceNode.Player};\\n{SourceNode.Value}\" -> \"{TargetNode.Player};\\n{TargetNode.Value}\" [label = \"{Value}\"];" ;
+            return $"\t\"{SourceNode.Player};\\n{SourceNode.Value}\" -> \"{TargetNode.Player};\\n{TargetNode.Value}\" [label = \"{Value}\" color = \"{Color}\"];" ;
         }
 
     }

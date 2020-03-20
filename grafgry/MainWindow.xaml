@@ -8,7 +8,8 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TextBox Name="Code" HorizontalAlignment="Left" Height="227" Margin="53,57,0,0" TextWrapping="Wrap" Text="graphviz code:" VerticalAlignment="Top" Width="311"/>
-        <Button Content="Generate GraphViz Code" HorizontalAlignment="Left" Margin="496,128,0,0" VerticalAlignment="Top" Width="151" Click="Button_Click"/>
+        <Button Content="Generate GraphViz Code" HorizontalAlignment="Left" Margin="496,57,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click"/>
+        <Button Content="Generate MinMax GraphViz Code" HorizontalAlignment="Left" Margin="496,118,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click"/>
 
     </Grid>
 </Window>
