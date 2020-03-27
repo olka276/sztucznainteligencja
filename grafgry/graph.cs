@@ -15,10 +15,10 @@ namespace grafgry
         private List<Edge> Edges;
         private List<int> AvailableTokens;
         private String StartingPlayer;
-        
+
         //constructor for graph
 
-        public Graph (List<Node> nodes, List<Edge> edges, List<int> tokens, String startingPlayer)
+        public Graph(List<Node> nodes, List<Edge> edges, List<int> tokens, String startingPlayer)
         {
             Nodes = nodes;
             Edges = edges;
@@ -30,11 +30,12 @@ namespace grafgry
         public void generateChildren(Node node, List<int> tokens, string player1, int value)
         {
             String player;
+            int nodeValue;
             player = player1 == "P" ? "A" : "P"; //check the player and change it
 
             foreach (int token in tokens)
             {
-                int nodeValue = value + token;
+                nodeValue = value + token;
                 if (nodeValue == 21)
                 {
                     Node lastNode = new Node("Remis", nodeValue, 2);
@@ -84,7 +85,7 @@ namespace grafgry
 
         //generating childen for each node
 
-        
+
 
         //generowanie kodu do graphViz
 
@@ -94,68 +95,103 @@ namespace grafgry
             code.AppendLine("strict digraph G {");
 
             foreach (Edge edge in Edges)
-            {
                 code.AppendLine(edge.ToString());
-            }
 
             code.AppendLine("}");
             return code.ToString();
         }
+        // minmaxik ************************************************************************************************************************************
 
-        public bool hasChildren(Node node)
+        public List<Node> getChildrenOfNode(Node node)
         {
-
+            List <Node> childrenOfThisNode = new List<Node>();
             foreach (Edge edge in Edges)
             {
                 if (edge.SourceNode == node)
-                {
-                    return true;
-                }
+                    childrenOfThisNode.Add(edge.TargetNode);
             }
-            return false;           
+
+            return childrenOfThisNode;
         }
 
-        public int? maxChild (Node node)
+        public Node findMinChild(Node node)
         {
-            int? value = null;
-           
+            Node minChild;
+            List<Node> childrenOfThisNode = new List<Node>();
+            childrenOfThisNode = getChildrenOfNode(node);
+            minChild = childrenOfThisNode[0];
+
+            foreach(Node child in childrenOfThisNode)
+            {
+                if (child.Score<minChild.Score)
+                    minChild = child;
+            }
+
+            return minChild;
+        }
+
+        public Node findMaxChild(Node node)
+        {
+            Node maxChild;
+            List<Node> childrenOfThisNode = new List<Node>();
+            childrenOfThisNode = getChildrenOfNode(node);
+            maxChild = childrenOfThisNode[0];
+
+            foreach (Node child in childrenOfThisNode)
+            {
+                if (child.Score > maxChild.Score)
+                    maxChild = child;
+            }
+
+            return maxChild;
+        }
+
+
+        public void findAndColorEdge(Node source, Node target)
+        {
             foreach (Edge edge in Edges)
             {
-                if (edge.SourceNode == node)
-                {
-                    if (edge.SourceNode.Value>value)
-                    value = edge.SourceNode.Value;
-                }
+                if (edge.SourceNode == source && edge.TargetNode == target)
+                    edge.Color = "red";
             }
-            
 
-            return value;
         }
 
-        public void generateMinMax (Graph graph)
+       
 
-        { 
-           
-            foreach (Node node in Nodes)
+        public void goToChildren(Node node)
+        {
+            List<Node> children = getChildrenOfNode(node);
+            foreach (Node child in children)
             {
-                if (hasChildren(node)==false) //it's the last node
-                {
-
-                }
-
-                if (hasChildren(node)==true)
-                {
-                    foreach(Edge edge in Edges)
-                    {  
-                        hasChildren(edge.SourceNode);
-
-                    }
-                }
+                if (child.Score == null)
+                    goToChildren(child);
+                
             }
+
+            Node bestChild;
+
+            if (node.Player == "P")
+                bestChild = findMaxChild(node);
+
+            else
+                bestChild = findMinChild(node);
+
+
+            node.Score = bestChild.Score;
+            findAndColorEdge(node, bestChild);
+
+
+
+
         }
 
+        public void MinMax ()
+        {
+            Node first = Nodes[0];
+            goToChildren(first);
 
-             
+        }
 
     }
 }

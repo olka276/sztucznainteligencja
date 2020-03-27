@@ -25,7 +25,7 @@ namespace grafgry
 
         public override string ToString()
         {
-            return $"\t\"{SourceNode.Player};\\n{SourceNode.Value}\" -> \"{TargetNode.Player};\\n{TargetNode.Value}\" [label = \"{Value}\" color = \"{Color}\"];" ;
+            return $"\t\"{SourceNode.Player};\\n{SourceNode.Value};\\n{SourceNode.Score}\" -> \"{TargetNode.Player};\\n{TargetNode.Value};\\n{TargetNode.Score}\" [label = \"{Value}\" color = \"{Color}\"];" ;
         }
 
     }

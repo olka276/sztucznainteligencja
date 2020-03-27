@@ -7,9 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox Name="Code" HorizontalAlignment="Left" Height="227" Margin="53,57,0,0" TextWrapping="Wrap" Text="graphviz code:" VerticalAlignment="Top" Width="311"/>
-        <Button Content="Generate GraphViz Code" HorizontalAlignment="Left" Margin="496,57,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click"/>
-        <Button Content="MinMAx" HorizontalAlignment="Left" Margin="464,138,0,0" VerticalAlignment="Top" Width="234" Click="Button_Click_1"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="696*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Name="Code" HorizontalAlignment="Left" Height="227" Margin="53,57,0,0" TextWrapping="Wrap" Text="graphviz code:" VerticalAlignment="Top" Width="311" Grid.ColumnSpan="2"/>
+        <Button Content="Generate GraphViz Code" HorizontalAlignment="Left" Margin="399.5,57,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click" Grid.Column="1"/>
+        <Button Content="MinMAx" HorizontalAlignment="Left" Margin="367.5,138,0,0" VerticalAlignment="Top" Width="234" Click="Button_Click_1" Grid.Column="1"/>
 
     </Grid>
 </Window>

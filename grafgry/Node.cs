@@ -19,6 +19,7 @@ namespace grafgry
             Score = null;
         }
 
+
         public Node(string player, int value, int score)
         {
             Player = player;

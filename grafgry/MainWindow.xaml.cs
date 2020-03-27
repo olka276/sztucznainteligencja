@@ -56,7 +56,7 @@ namespace grafgry
 
             grafik.GenerateGraph(startingPlayer);
 
-
+            grafik.MinMax();
 
             code = grafik.ToString();
 
